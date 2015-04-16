@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1dF-7U-g2I">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Launch View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="KTLaunchViewController" customModule="KaranThukral" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,149 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="osa-IH-eIf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-AY-fbD">
+                                <rect key="frame" x="200" y="84" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="C7A-D8-h2B"/>
+                                    <constraint firstAttribute="height" constant="200" id="G32-nT-Jc1"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="YBT-gV-R9Z"/>
+                                    <constraint firstAttribute="width" constant="200" id="tdV-GR-0EV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="G32-nT-Jc1"/>
+                                        <exclude reference="tdV-GR-0EV"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Karan Thukral" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkK-ad-2Vz">
+                                <rect key="frame" x="151" y="319" width="299" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="ASR-Nr-GkU"/>
+                                    <constraint firstAttribute="width" constant="299" id="hNg-5m-fzd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-Vo-XGM">
+                                <rect key="frame" x="137" y="362" width="326" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="326" id="yId-Xl-2oT"/>
+                                </constraints>
+                                <string key="text">Systems Design Engineering Student
+University of Waterloo
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-lQ-tKa">
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="69W-LR-zF1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="FxZ-OM-jGe"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="zB0-AY-fbD" secondAttribute="centerX" id="IGl-46-Oef"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="osa-IH-eIf" secondAttribute="centerX" id="PwH-zN-K5M"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="300" id="Rzw-JX-LdM"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="bSu-xD-sCH"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="width" secondItem="osa-IH-eIf" secondAttribute="width" id="kvg-Ge-buj"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="peP-lQ-tKa" secondAttribute="centerX" id="mUh-Bm-aPC"/>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="centerX" secondItem="osa-IH-eIf" secondAttribute="centerX" id="oSV-V7-hT6"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="1ae-Vo-XGM" secondAttribute="centerX" id="pBC-Ww-Nra"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="35" id="pfD-qd-5xD"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="78" id="pyq-FO-kfs"/>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="uM3-U5-w2a"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="osa-IH-eIf" secondAttribute="bottom" id="w8a-IO-Oa3"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wUn-M5-FEi"/>
+                            <constraint firstAttribute="centerX" secondItem="zB0-AY-fbD" secondAttribute="centerX" id="yyN-BP-GCR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FxZ-OM-jGe"/>
+                                <exclude reference="oSV-V7-hT6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Tu4-sY-0kl"/>
+                    <connections>
+                        <segue destination="0h1-Li-qJP" kind="show" identifier="PushSegue" id="1nu-3g-tlS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1272" y="279"/>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="Ygc-sm-f0Y">
+            <objects>
+                <viewController storyboardIdentifier="storyVC" id="0h1-Li-qJP" customClass="KTStoryViewController" customModule="KaranThukral" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QJR-Gl-wT7"/>
+                        <viewControllerLayoutGuide type="bottom" id="9ox-UY-tiW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dck-DV-73h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIEW 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-jJ-Wdm">
+                                <rect key="frame" x="237" y="276" width="127" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fi5-jJ-Wdm" firstAttribute="centerX" secondItem="dck-DV-73h" secondAttribute="centerX" id="56G-tm-vDS"/>
+                            <constraint firstItem="fi5-jJ-Wdm" firstAttribute="centerY" secondItem="dck-DV-73h" secondAttribute="centerY" id="5lT-hK-J2R"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKQ-Ye-ccT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2017" y="279"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="imy-om-AL1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1dF-7U-g2I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jkh-iZ-Mc0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="delegate" destination="R3L-lH-aT4" id="91M-fJ-Gr0"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="NP0-it-XKX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvY-2j-FOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="R3L-lH-aT4" customClass="KTTransitionManager" customModule="KaranThukral" customModuleProvider="target">
+                    <connections>
+                        <outlet property="navigationController" destination="1dF-7U-g2I" id="McU-oW-5ET"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="459" y="-414"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchScreenBG" width="749" height="1334"/>
+        <image name="profileImage" width="400" height="400"/>
+    </resources>
 </document>
