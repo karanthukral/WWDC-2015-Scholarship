@@ -10,8 +10,6 @@ import UIKit
 
 class KTLaunchViewController: UIViewController {
 	
-	var canSwipeUp = true;
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationController?.navigationBarHidden = true

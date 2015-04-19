@@ -13,6 +13,7 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 	weak var transitionContext: UIViewControllerContextTransitioning?
 	var interactionController: UIPercentDrivenInteractiveTransition?
 	@IBOutlet weak var navigationController: UINavigationController?
+	var panGesture: UIPanGestureRecognizer?
 	
 	func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 		return self
@@ -25,8 +26,8 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		var panGesture = UIPanGestureRecognizer(target: self, action: Selector("panned:"))
-		self.navigationController!.view.addGestureRecognizer(panGesture)
+		panGesture = UIPanGestureRecognizer(target: self, action: Selector("panned:"))
+		self.navigationController!.view.addGestureRecognizer(panGesture!)
 	}
 	
 	//1
@@ -34,9 +35,9 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 		switch gestureRecognizer.state {
 			case .Began:
 				self.interactionController = UIPercentDrivenInteractiveTransition()
-				if(self.navigationController?.viewControllers.count <= 1) {
+				//if(self.navigationController?.viewControllers.count <= 1) {
 					self.navigationController?.topViewController.performSegueWithIdentifier("PushSegue", sender: nil)
-				}
+				//}
 			 
 				//2
 			case .Changed:
@@ -94,5 +95,12 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 	
 	override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
 		self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
+	}
+	
+	func animationEnded(transitionCompleted: Bool) {
+		if (transitionCompleted) {
+			self.navigationController?.delegate = nil
+			self.navigationController?.view.removeGestureRecognizer(panGesture!)
+		}
 	}
 }
