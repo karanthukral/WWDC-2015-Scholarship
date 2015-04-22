@@ -22,6 +22,7 @@
 		9EA6052F1AE304A200B2DF96 /* MavenPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EA6052C1AE304A200B2DF96 /* MavenPro-Regular.ttf */; };
 		9EA605301AE304A200B2DF96 /* MavenProLight-200.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9EA6052D1AE304A200B2DF96 /* MavenProLight-200.otf */; };
 		9EA605311AE304A200B2DF96 /* MavenProLight-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9EA6052E1AE304A200B2DF96 /* MavenProLight-300.otf */; };
+		9EC421221AE5E8DC006A6F80 /* KTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC421211AE5E8DC006A6F80 /* KTConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		9EA6052C1AE304A200B2DF96 /* MavenPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Regular.ttf"; sourceTree = "<group>"; };
 		9EA6052D1AE304A200B2DF96 /* MavenProLight-200.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenProLight-200.otf"; sourceTree = "<group>"; };
 		9EA6052E1AE304A200B2DF96 /* MavenProLight-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenProLight-300.otf"; sourceTree = "<group>"; };
+		9EC421211AE5E8DC006A6F80 /* KTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,15 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				9E49662A1ADE0F4E0043D37D /* AppDelegate.swift */,
-				9E3506C31ADF27E100CFDA8B /* KTTransitionManager.swift */,
 				9E3506BC1ADF1EA000CFDA8B /* View Controllers */,
-				9E49662E1ADE0F4E0043D37D /* Main.storyboard */,
+				9E79A4611AE84CC2001E16B9 /* Views */,
+				9E79A46B1AE84D0C001E16B9 /* Utils */,
 				9E4966311ADE0F4E0043D37D /* Images.xcassets */,
-				9E4966331ADE0F4E0043D37D /* LaunchScreen.xib */,
 				9E4966281ADE0F4E0043D37D /* Supporting Files */,
-				9EA6052A1AE3024400B2DF96 /* KTTimelineCell.swift */,
-				9E0AB4171AE30C8100C5E96F /* KTDataStore.swift */,
-				9E766FA21AE45DFC00500018 /* KTTimelineBarView.swift */,
 			);
 			path = KaranThukral;
 			sourceTree = "<group>";
@@ -143,6 +141,27 @@
 				9E49663F1ADE0F4E0043D37D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E79A4611AE84CC2001E16B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E49662E1ADE0F4E0043D37D /* Main.storyboard */,
+				9E4966331ADE0F4E0043D37D /* LaunchScreen.xib */,
+				9EA6052A1AE3024400B2DF96 /* KTTimelineCell.swift */,
+				9E766FA21AE45DFC00500018 /* KTTimelineBarView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9E79A46B1AE84D0C001E16B9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9E3506C31ADF27E100CFDA8B /* KTTransitionManager.swift */,
+				9E0AB4171AE30C8100C5E96F /* KTDataStore.swift */,
+				9EC421211AE5E8DC006A6F80 /* KTConstants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		9EA605321AE304A700B2DF96 /* Fonts */ = {
@@ -263,6 +282,7 @@
 				9EA6052B1AE3024400B2DF96 /* KTTimelineCell.swift in Sources */,
 				9EA605291AE301B700B2DF96 /* KTTimelineViewController.swift in Sources */,
 				9E0AB4181AE30C8100C5E96F /* KTDataStore.swift in Sources */,
+				9EC421221AE5E8DC006A6F80 /* KTConstants.swift in Sources */,
 				9E49662D1ADE0F4E0043D37D /* KTLaunchViewController.swift in Sources */,
 				9E3506BE1ADF1EC500CFDA8B /* KTStoryViewController.swift in Sources */,
 				9E49662B1ADE0F4E0043D37D /* AppDelegate.swift in Sources */,

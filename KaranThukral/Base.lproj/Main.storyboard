@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1dF-7U-g2I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1dF-7U-g2I">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -60,6 +60,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-Vo-XGM">
                                 <rect key="frame" x="137" y="362" width="326" height="51"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="y3Y-1L-pRb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="52"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="326" id="yId-Xl-2oT"/>
                                 </constraints>
                                 <string key="text">Systems Design Engineering Student
@@ -68,8 +71,16 @@ University of Waterloo
                                 <fontDescription key="fontDescription" name="MavenProRegular" family="Maven Pro" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="37" y="406" width="326" height="49"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="y3Y-1L-pRb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="y3Y-1L-pRb"/>
+                                        <exclude reference="yId-Xl-2oT"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-lQ-tKa">
@@ -85,7 +96,9 @@ University of Waterloo
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="6uz-Ao-ha0"/>
                             <constraint firstItem="zB0-AY-fbD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="FxZ-OM-jGe"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="78" id="I1x-9M-sGJ"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="zB0-AY-fbD" secondAttribute="centerX" id="IGl-46-Oef"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="osa-IH-eIf" secondAttribute="centerX" id="PwH-zN-K5M"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="300" id="Rzw-JX-LdM"/>
@@ -93,6 +106,7 @@ University of Waterloo
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="width" secondItem="osa-IH-eIf" secondAttribute="width" id="kvg-Ge-buj"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="peP-lQ-tKa" secondAttribute="centerX" id="mUh-Bm-aPC"/>
                             <constraint firstItem="zB0-AY-fbD" firstAttribute="centerX" secondItem="osa-IH-eIf" secondAttribute="centerX" id="oSV-V7-hT6"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="centerX" secondItem="mkK-ad-2Vz" secondAttribute="centerX" id="oSX-sh-fdn"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="1ae-Vo-XGM" secondAttribute="centerX" id="pBC-Ww-Nra"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="35" id="pfD-qd-5xD"/>
                             <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="78" id="pyq-FO-kfs"/>
@@ -105,6 +119,18 @@ University of Waterloo
                             <mask key="constraints">
                                 <exclude reference="FxZ-OM-jGe"/>
                                 <exclude reference="oSV-V7-hT6"/>
+                                <exclude reference="6uz-Ao-ha0"/>
+                                <exclude reference="I1x-9M-sGJ"/>
+                                <exclude reference="oSX-sh-fdn"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="pBC-Ww-Nra"/>
+                                <include reference="6uz-Ao-ha0"/>
+                                <include reference="I1x-9M-sGJ"/>
+                                <include reference="oSX-sh-fdn"/>
+                                <exclude reference="pyq-FO-kfs"/>
                             </mask>
                         </variation>
                     </view>
@@ -115,7 +141,7 @@ University of Waterloo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="-330"/>
+            <point key="canvasLocation" x="1840.5" y="-330"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="FJa-u1-YOI">
@@ -145,23 +171,14 @@ University of Waterloo
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F3C-tC-NPQ" id="zdG-tc-Wr9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Life in India" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQD-rw-b2o">
-                                                    <rect key="frame" x="84" y="11" width="472" height="37"/>
-                                                    <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="25"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="72" y="11" width="520" height="37"/>
-                                                    </variation>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2u-iN-0lI">
                                                     <rect key="frame" x="16" y="5" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="KwZ-FX-gOG">
-                                                            <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                                                         </constraint>
                                                         <constraint firstAttribute="width" constant="50" id="haR-Cz-iIP">
-                                                            <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                                                         </constraint>
                                                     </constraints>
                                                     <variation key="default">
@@ -170,14 +187,19 @@ University of Waterloo
                                                             <exclude reference="haR-Cz-iIP"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="24" y="13" width="35" height="35"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="KwZ-FX-gOG"/>
                                                             <include reference="haR-Cz-iIP"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Life in India" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQD-rw-b2o">
+                                                    <rect key="frame" x="84" y="11" width="472" height="37"/>
+                                                    <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="25"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="iQD-rw-b2o" secondAttribute="trailing" constant="44" id="ABE-8J-HRn">
@@ -185,15 +207,17 @@ University of Waterloo
                                                 </constraint>
                                                 <constraint firstItem="iQD-rw-b2o" firstAttribute="top" secondItem="zdG-tc-Wr9" secondAttribute="topMargin" constant="3" id="AKs-Mb-mU9"/>
                                                 <constraint firstItem="d2u-iN-0lI" firstAttribute="leading" secondItem="zdG-tc-Wr9" secondAttribute="leading" constant="16" id="HpY-zk-Znb">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="24"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="16"/>
                                                 </constraint>
                                                 <constraint firstItem="iQD-rw-b2o" firstAttribute="centerY" secondItem="zdG-tc-Wr9" secondAttribute="centerY" id="J4m-qo-Nao"/>
                                                 <constraint firstItem="d2u-iN-0lI" firstAttribute="top" secondItem="zdG-tc-Wr9" secondAttribute="top" constant="5" id="L6Z-yJ-tnQ">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="12"/>
                                                 </constraint>
-                                                <constraint firstItem="d2u-iN-0lI" firstAttribute="centerY" secondItem="iQD-rw-b2o" secondAttribute="centerY" id="fC2-uj-VH9"/>
+                                                <constraint firstItem="d2u-iN-0lI" firstAttribute="centerY" secondItem="iQD-rw-b2o" secondAttribute="centerY" id="fC2-uj-VH9">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
+                                                </constraint>
                                                 <constraint firstItem="iQD-rw-b2o" firstAttribute="leading" secondItem="d2u-iN-0lI" secondAttribute="trailing" constant="18" id="oks-w4-zfi">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="13"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                                 </constraint>
                                             </constraints>
                                             <variation key="default">
@@ -223,10 +247,10 @@ University of Waterloo
                                 <rect key="frame" x="16" y="540" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="PEX-kr-c1k">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="40" id="Z7k-yc-tsw">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                                     </constraint>
                                 </constraints>
                                 <state key="normal" title="Button">
@@ -242,7 +266,7 @@ University of Waterloo
                             <constraint firstAttribute="trailing" secondItem="8sF-PA-keJ" secondAttribute="trailing" constant="16" id="06z-e4-TB2"/>
                             <constraint firstItem="8sF-PA-keJ" firstAttribute="top" secondItem="zeg-tM-jcO" secondAttribute="bottom" constant="3" id="2If-Mt-xD4"/>
                             <constraint firstItem="y43-wD-sbo" firstAttribute="top" secondItem="ZCW-SB-bqM" secondAttribute="bottom" constant="6" id="HTf-ud-ay5">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="13"/>
                             </constraint>
                             <constraint firstItem="y43-wD-sbo" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leadingMargin" id="Jtd-st-bFI">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -289,23 +313,6 @@ University of Waterloo
             </objects>
             <point key="canvasLocation" x="1863" y="520.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Cp5-vX-JES">
-            <objects>
-                <viewController id="Iox-f0-FxX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0nJ-1R-OOv"/>
-                        <viewControllerLayoutGuide type="bottom" id="tH9-KS-Wph"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zEw-fy-6UF">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B5f-SH-iFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="178.5" y="308.25"/>
-        </scene>
         <!--Story View Controller-->
         <scene sceneID="Ygc-sm-f0Y">
             <objects>
@@ -318,13 +325,6 @@ University of Waterloo
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-Jj-V5b">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="8Jj-97-f0a"/>
-                                    <constraint firstAttribute="height" constant="200" id="gwZ-1E-dTT"/>
-                                </constraints>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="277" placeholderIntrinsicHeight="372" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qju-uL-vpQ">
                                 <rect key="frame" x="70" y="208" width="277" height="372"/>
                                 <constraints>
@@ -336,81 +336,14 @@ University of Waterloo
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAZ-sf-yuu">
-                                <rect key="frame" x="0.0" y="143" width="600" height="57"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="JZC-dB-V7d">
-                                        <rect key="frame" x="16" y="150" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="GwD-T6-jBX"/>
-                                            <constraint firstAttribute="width" constant="45" id="SVL-xR-0oi"/>
-                                        </constraints>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="15" y="-170" width="197" height="401"/>
-                                        </variation>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Life in India" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-b2-hfl">
-                                        <rect key="frame" x="84" y="14" width="432" height="25"/>
-                                        <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="25"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="236" y="0.0" width="128" height="63"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="centerY" secondItem="JZC-dB-V7d" secondAttribute="centerY" constant="1" id="2j2-hd-3ey"/>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="top" secondItem="BAZ-sf-yuu" secondAttribute="top" id="3uy-e5-44n"/>
-                                    <constraint firstAttribute="bottom" secondItem="3I3-b2-hfl" secondAttribute="bottom" id="UBV-Xf-c2r"/>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="leading" secondItem="JZC-dB-V7d" secondAttribute="trailing" constant="24" id="Yqj-y1-e9r"/>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="top" secondItem="BAZ-sf-yuu" secondAttribute="top" constant="14" id="cZz-C0-Trk">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
-                                    </constraint>
-                                    <constraint firstItem="JZC-dB-V7d" firstAttribute="leading" secondItem="BAZ-sf-yuu" secondAttribute="leading" constant="15" id="fYu-IN-oFC"/>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="leading" secondItem="BAZ-sf-yuu" secondAttribute="leading" constant="84" id="nIS-Ds-rtu"/>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="centerX" secondItem="BAZ-sf-yuu" secondAttribute="centerX" id="s6h-bO-Lra"/>
-                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="centerX" secondItem="BAZ-sf-yuu" secondAttribute="centerX" id="thC-hJ-e4W"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="JZC-dB-V7d"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="fYu-IN-oFC"/>
-                                        <exclude reference="2j2-hd-3ey"/>
-                                        <exclude reference="3uy-e5-44n"/>
-                                        <exclude reference="UBV-Xf-c2r"/>
-                                        <exclude reference="Yqj-y1-e9r"/>
-                                        <exclude reference="thC-hJ-e4W"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="JZC-dB-V7d"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="fYu-IN-oFC"/>
-                                        <include reference="2j2-hd-3ey"/>
-                                        <include reference="3uy-e5-44n"/>
-                                        <include reference="UBV-Xf-c2r"/>
-                                        <include reference="Yqj-y1-e9r"/>
-                                        <exclude reference="cZz-C0-Trk"/>
-                                        <exclude reference="nIS-Ds-rtu"/>
-                                        <exclude reference="s6h-bO-Lra"/>
-                                        <include reference="thC-hJ-e4W"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiF-Pi-BUE">
                                 <rect key="frame" x="16" y="540" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Oa7-1n-Un2">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="40" id="yGr-EK-mQV">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                                     </constraint>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -418,16 +351,100 @@ University of Waterloo
                                     <segue destination="dWv-IT-dYD" kind="presentation" identifier="timelineSegue" id="8gY-Tp-CDf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="yxE-Jj-V5b">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="8Jj-97-f0a">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="400"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="200" id="gwZ-1E-dTT"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAZ-sf-yuu">
+                                <rect key="frame" x="0.0" y="143" width="600" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Life in India" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-b2-hfl">
+                                        <rect key="frame" x="84" y="14" width="432" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="310" id="msG-sC-Seb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="25"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="msG-sC-Seb"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="msG-sC-Seb"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="top" secondItem="BAZ-sf-yuu" secondAttribute="top" id="bdj-N1-51a"/>
+                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="top" secondItem="BAZ-sf-yuu" secondAttribute="top" constant="14" id="cZz-C0-Trk">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                    </constraint>
+                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="leading" secondItem="BAZ-sf-yuu" secondAttribute="leading" constant="84" id="hLV-eg-LTI"/>
+                                    <constraint firstAttribute="height" secondItem="3I3-b2-hfl" secondAttribute="height" id="juG-Y7-loR"/>
+                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="leading" secondItem="BAZ-sf-yuu" secondAttribute="leading" constant="84" id="nIS-Ds-rtu"/>
+                                    <constraint firstItem="3I3-b2-hfl" firstAttribute="centerX" secondItem="BAZ-sf-yuu" secondAttribute="centerX" id="s6h-bO-Lra"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bdj-N1-51a"/>
+                                        <exclude reference="hLV-eg-LTI"/>
+                                        <exclude reference="juG-Y7-loR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="bdj-N1-51a"/>
+                                        <exclude reference="cZz-C0-Trk"/>
+                                        <include reference="hLV-eg-LTI"/>
+                                        <include reference="juG-Y7-loR"/>
+                                        <exclude reference="nIS-Ds-rtu"/>
+                                        <exclude reference="s6h-bO-Lra"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="V1p-Yl-82r">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Djj-2T-tcZ"/>
+                                    <constraint firstAttribute="height" constant="45" id="kwX-fC-HQL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Djj-2T-tcZ"/>
+                                        <exclude reference="kwX-fC-HQL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Djj-2T-tcZ"/>
+                                        <include reference="kwX-fC-HQL"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yxE-Jj-V5b" firstAttribute="trailing" secondItem="BAZ-sf-yuu" secondAttribute="trailing" id="9ww-bQ-E0x"/>
+                            <constraint firstItem="yxE-Jj-V5b" firstAttribute="trailing" secondItem="BAZ-sf-yuu" secondAttribute="trailing" id="9ww-bQ-E0x">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-200"/>
+                            </constraint>
                             <constraint firstItem="yxE-Jj-V5b" firstAttribute="leading" secondItem="BAZ-sf-yuu" secondAttribute="leading" id="BJN-p9-U0a"/>
+                            <constraint firstItem="3I3-b2-hfl" firstAttribute="leading" secondItem="V1p-Yl-82r" secondAttribute="trailing" constant="23" id="EQb-V0-dmE"/>
                             <constraint firstItem="qju-uL-vpQ" firstAttribute="bottom" secondItem="wiF-Pi-BUE" secondAttribute="bottom" id="GUO-22-xj7"/>
                             <constraint firstItem="9ox-UY-tiW" firstAttribute="top" secondItem="qju-uL-vpQ" secondAttribute="bottom" constant="20" id="Jx8-kQ-lz7"/>
                             <constraint firstItem="wiF-Pi-BUE" firstAttribute="leading" secondItem="dck-DV-73h" secondAttribute="leadingMargin" id="Q96-oo-xxb">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="qju-uL-vpQ" firstAttribute="top" secondItem="V1p-Yl-82r" secondAttribute="bottom" constant="17" id="RK5-zW-YeY"/>
                             <constraint firstItem="yxE-Jj-V5b" firstAttribute="top" secondItem="dck-DV-73h" secondAttribute="top" id="SLr-dd-r65"/>
                             <constraint firstAttribute="trailing" secondItem="qju-uL-vpQ" secondAttribute="trailing" constant="53" id="WV1-Oc-Vam">
                                 <variation key="heightClass=regular-widthClass=compact" constant="24"/>
@@ -435,9 +452,10 @@ University of Waterloo
                             <constraint firstItem="qju-uL-vpQ" firstAttribute="leading" secondItem="dck-DV-73h" secondAttribute="leadingMargin" constant="54" id="Yoh-1P-ivj">
                                 <variation key="heightClass=regular-widthClass=compact" constant="58"/>
                             </constraint>
+                            <constraint firstItem="yxE-Jj-V5b" firstAttribute="leading" secondItem="V1p-Yl-82r" secondAttribute="trailing" constant="-61" id="fqf-A9-TZD"/>
                             <constraint firstItem="qju-uL-vpQ" firstAttribute="top" secondItem="yxE-Jj-V5b" secondAttribute="bottom" constant="8" symbolic="YES" id="gHA-Os-kmR"/>
                             <constraint firstItem="qju-uL-vpQ" firstAttribute="leading" secondItem="wiF-Pi-BUE" secondAttribute="trailing" constant="14" id="lWx-0I-7a6">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="13"/>
                             </constraint>
                             <constraint firstItem="yxE-Jj-V5b" firstAttribute="bottom" secondItem="BAZ-sf-yuu" secondAttribute="bottom" id="sD5-am-Eg1"/>
                             <constraint firstItem="BAZ-sf-yuu" firstAttribute="top" secondItem="QJR-Gl-wT7" secondAttribute="bottom" constant="123" id="sI5-fx-D5f">
@@ -446,12 +464,24 @@ University of Waterloo
                             <constraint firstItem="yxE-Jj-V5b" firstAttribute="leading" secondItem="dck-DV-73h" secondAttribute="leading" id="vEs-YY-s1s"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="V1p-Yl-82r"/>
+                            </mask>
                             <mask key="constraints">
+                                <exclude reference="fqf-A9-TZD"/>
+                                <exclude reference="EQb-V0-dmE"/>
+                                <exclude reference="RK5-zW-YeY"/>
                                 <exclude reference="WV1-Oc-Vam"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="V1p-Yl-82r"/>
+                            </mask>
                             <mask key="constraints">
+                                <include reference="fqf-A9-TZD"/>
+                                <include reference="EQb-V0-dmE"/>
+                                <include reference="RK5-zW-YeY"/>
                                 <include reference="WV1-Oc-Vam"/>
                             </mask>
                         </variation>
@@ -462,7 +492,6 @@ University of Waterloo
                         <outlet property="pageTitleLabel" destination="3I3-b2-hfl" id="5Av-gz-lE0"/>
                         <outlet property="textScrollView" destination="qju-uL-vpQ" id="uAn-8m-c9W"/>
                         <outlet property="timelineButton" destination="wiF-Pi-BUE" id="Cz8-x2-WU3"/>
-                        <segue destination="Iox-f0-FxX" kind="show" id="7wJ-bL-tqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKQ-Ye-ccT" userLabel="First Responder" sceneMemberID="firstResponder"/>

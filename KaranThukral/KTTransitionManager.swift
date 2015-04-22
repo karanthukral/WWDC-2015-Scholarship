@@ -15,54 +15,24 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 	@IBOutlet weak var navigationController: UINavigationController?
 	var panGesture: UIPanGestureRecognizer?
 	
-	func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		return self
-	}
- 
-	func navigationController(navigationController: UINavigationController,
-		interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-			return self.interactionController
-	}
-	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		panGesture = UIPanGestureRecognizer(target: self, action: Selector("panned:"))
 		self.navigationController!.view.addGestureRecognizer(panGesture!)
 	}
 	
-	//1
-	func panned(gestureRecognizer: UIPanGestureRecognizer) {
-		switch gestureRecognizer.state {
-			case .Began:
-				self.interactionController = UIPercentDrivenInteractiveTransition()
-				//if(self.navigationController?.viewControllers.count <= 1) {
-					self.navigationController?.topViewController.performSegueWithIdentifier("PushSegue", sender: nil)
-				//}
-			 
-				//2
-			case .Changed:
-				var translation = gestureRecognizer.translationInView(self.navigationController!.view)
-				var completionProgress = -translation.y/CGRectGetHeight(self.navigationController!.view.bounds)
-				self.interactionController?.updateInteractiveTransition(completionProgress)
-			 
-				//3
-			case .Ended:
-				var translation = gestureRecognizer.translationInView(self.navigationController!.view)
-				if (-translation.y/CGRectGetHeight(self.navigationController!.view.bounds) > 0.25) {
-					self.interactionController?.finishInteractiveTransition()
-				} else {
-					self.interactionController?.completionSpeed = 0.25
-					self.interactionController?.cancelInteractiveTransition()
-				}
-				self.interactionController = nil
-			 
-				//4
-			default:
-				self.interactionController?.cancelInteractiveTransition()
-				self.interactionController = nil
-			  }
+	// MARK: UINavigationControllerDelegate
+	
+	func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return self
 	}
-
+	
+	// MARK: UIViewControllerAnimatedTransitioning
+ 
+	func navigationController(navigationController: UINavigationController,
+		interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+			return self.interactionController
+	}
 	
 	func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
 		return 0.5
@@ -93,14 +63,43 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 		
 	}
 	
-	override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
-		self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
-	}
-	
 	func animationEnded(transitionCompleted: Bool) {
 		if (transitionCompleted) {
 			self.navigationController?.delegate = nil
 			self.navigationController?.view.removeGestureRecognizer(panGesture!)
+		}
+	}
+	
+	override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+		self.transitionContext?.completeTransition(!self.transitionContext!.transitionWasCancelled())
+	}
+	
+	// MARK: Interactive Animation
+	
+	func panned(gestureRecognizer: UIPanGestureRecognizer) {
+		switch gestureRecognizer.state {
+		case .Began:
+			self.interactionController = UIPercentDrivenInteractiveTransition()
+			self.navigationController?.topViewController.performSegueWithIdentifier("PushSegue", sender: nil)
+			
+		case .Changed:
+			var translation = gestureRecognizer.translationInView(self.navigationController!.view)
+			var completionProgress = -translation.y/(CGRectGetHeight(self.navigationController!.view.bounds)/2)
+			self.interactionController?.updateInteractiveTransition(completionProgress)
+			
+		case .Ended:
+			var translation = gestureRecognizer.translationInView(self.navigationController!.view)
+			if (-translation.y/CGRectGetHeight(self.navigationController!.view.bounds) > 0.25) {
+				self.interactionController?.finishInteractiveTransition()
+			} else {
+				self.interactionController?.completionSpeed = 0.25
+				self.interactionController?.cancelInteractiveTransition()
+			}
+			self.interactionController = nil
+			
+		default:
+			self.interactionController?.cancelInteractiveTransition()
+			self.interactionController = nil
 		}
 	}
 }

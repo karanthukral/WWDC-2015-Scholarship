@@ -14,8 +14,9 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	@IBOutlet weak var timelineButton: UIButton!
 	@IBOutlet weak var textScrollView: UIScrollView!
 	var innerScrollViews: Array <UIScrollView> = []
-	var didLayoutScrollViews: Bool = false
+	var didLayoutCustomSubviews: Bool = false
 	var allStories: Array <KTStory> = []
+	var timelineBar: KTTimelineBarView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,9 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		setUpTimelineButtonStyle()
-		if (didLayoutScrollViews == false) {
+		if (didLayoutCustomSubviews == false) {
 			setUpScrollView()
+			setupTimelineBar()
 		}
 	}
 	
@@ -37,20 +39,20 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	func setUpTimelineButtonStyle() {
 		timelineButton.layer.cornerRadius = 0.5 * timelineButton.bounds.size.width
 		timelineButton.layer.masksToBounds = false
-		timelineButton.layer.shadowColor = UIColor(hue:0, saturation:0, brightness:0.5, alpha:1).CGColor
+		timelineButton.layer.shadowColor = KTConstants.circularButtonShadowColor.CGColor
 		timelineButton.layer.shadowOpacity = 1.0
 		timelineButton.layer.shadowRadius = 0
 		timelineButton.layer.shadowOffset = CGSizeMake(0, 1.0)
-		timelineButton.backgroundColor = UIColor(hue:0.57, saturation:0.75, brightness:0.85, alpha:1)
+		timelineButton.backgroundColor = KTConstants.KTStoryView.timelineButtonBackgroundColor
 	}
 	
 	func setUpScrollView() {
-		didLayoutScrollViews = true
+		didLayoutCustomSubviews = true
 		var numberOfPages = allStories.count
 		textScrollView.contentSize = CGSizeMake(CGRectGetWidth(textScrollView.frame), (CGRectGetHeight(textScrollView.frame) * CGFloat(numberOfPages)))
 		textScrollView.backgroundColor = UIColor.clearColor()
 		
-		for var index = 0; index < numberOfPages; index++ {
+		for (var index = 0; index < numberOfPages; index++) {
 			var innerView = setUpInnerScrollViewForIndex(index)
 			textScrollView.addSubview(innerView)
 			innerScrollViews.append(innerView)
@@ -58,7 +60,6 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	}
 	
 	func setUpInnerScrollViewForIndex(index: Int) -> UIScrollView {
-		print("Index \(index) scroll view \n")
 		var parentHeight = CGRectGetHeight(textScrollView.frame)
 		var parentSize = textScrollView.frame.size
 		var origin = CGPointMake(0, (parentHeight * CGFloat(index)))
@@ -72,26 +73,26 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 			label.center = CGPointMake(innerView.frame.size.width/2, innerView.frame.size.height/2)
 		}
 		innerView.addSubview(label)
-		var contentSize = CGSizeMake(label.frame.size.width, label.frame.size.height + CGFloat(50.0))
+		var contentSize = CGSizeMake(label.frame.size.width, label.frame.size.height + KTConstants.KTStoryView.innerScrollViewPadding)
 		innerView.contentSize = contentSize
 		return innerView
 	}
 	
 	func setUpLabelForIndex(index: Int) -> UILabel {
-		var frame = CGRectMake(10, 30, textScrollView.frame.size.width - 20, 0)
+		var frame = CGRectMake(KTConstants.KTStoryView.sideLabelPadding, KTConstants.KTStoryView.topLabelPadding, textScrollView.frame.size.width - (2 * KTConstants.KTStoryView.sideLabelPadding), 0)
 		var label = UILabel.init(frame: frame)
 		let story = allStories[index]
 		var labelText = story.body
 		var attributedText = NSMutableAttributedString.init(string: labelText)
 		var paragraphStyle = NSMutableParagraphStyle.new()
-		paragraphStyle.lineSpacing = 8
+		paragraphStyle.lineSpacing = 12
 		attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, NSString(string: labelText).length))
 		
 		label.attributedText = attributedText
 		label.backgroundColor = UIColor.clearColor()
 		label.textColor = UIColor.blackColor()
 		label.numberOfLines = 0
-		label.font = UIFont.systemFontOfSize(16.0)
+		label.font = UIFont(name: "Maven Pro", size: 18.0)
 		var labelSize = label.sizeThatFits(CGSizeMake(frame.width, CGFloat(MAXFLOAT)))
 		var labelFrame = label.frame
 		labelFrame.size = labelSize
@@ -99,13 +100,17 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		return label
 	}
 	
+	func setupTimelineBar() {
+		var height = CGRectGetHeight(textScrollView.frame) - CGRectGetHeight(timelineButton.frame) + 10
+		timelineBar = KTTimelineBarView(frame: CGRectMake(CGRectGetMidX(timelineButton.frame) - (KTConstants.KTStoryView.timelineBarWidth/2), CGRectGetMaxY(bannerImageView.frame), KTConstants.KTStoryView.timelineBarWidth, height))
+		self.view.insertSubview(timelineBar, atIndex: 0)
+		timelineBar.setSelected(0)
+	}
+	
 	// MARK: Scroll View Delegate
 	
 	func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-		var page = currentPage()
-		var pageScrollView = innerScrollViews[page]
-		pageScrollView.contentOffset = CGPointZero
-		changeTitleAndImage(page)
+		changeTitleAndImage(currentPage())
 	}
 	
 	// MARK: Helpers
@@ -119,6 +124,7 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	}
 	
 	func changeTitleAndImage(index: Int) {
+		timelineBar.setSelected(index)
 		var story = allStories[index]
 		UIView.animateWithDuration(0.25, delay: 0.0, options: nil, animations: {
 			self.pageTitleLabel.text = story.title
@@ -143,8 +149,8 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		var pageLoc = pageLocation(index)
 		textScrollView.scrollRectToVisible(CGRectMake(0, pageLoc, CGRectGetWidth(textScrollView.frame), CGRectGetHeight(textScrollView.frame)), animated: false
 		)
-		var pageScrollView = innerScrollViews[index]
-		pageScrollView.contentOffset = CGPointZero
+		var innerScrollView = innerScrollViews[index]
+		innerScrollView.contentOffset = CGPointZero
 		changeTitleAndImage(currentPage())
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
