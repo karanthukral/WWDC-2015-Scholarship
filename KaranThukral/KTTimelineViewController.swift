@@ -40,11 +40,12 @@ class KTTimelineViewController: UIViewController, UITableViewDataSource, UITable
 	func setUpTimelineButtonStyle() {
 		exitTimelineButton.layer.cornerRadius = 0.5 * exitTimelineButton.bounds.size.width
 		exitTimelineButton.layer.masksToBounds = false
-		exitTimelineButton.layer.shadowColor = UIColor(hue:0, saturation:0, brightness:0.5, alpha:1).CGColor
+		exitTimelineButton.layer.shadowColor = KTConstants.circularButtonShadowColor.CGColor
 		exitTimelineButton.layer.shadowOpacity = 1.0
 		exitTimelineButton.layer.shadowRadius = 0
 		exitTimelineButton.layer.shadowOffset = CGSizeMake(0, 1.0)
-		exitTimelineButton.backgroundColor = UIColor(hue:0.96, saturation:0.89, brightness:0.76, alpha:1)
+		exitTimelineButton.backgroundColor = KTConstants.KTTimelineView.cancelTimelineButtonBackgroundColor
+		exitTimelineButton.setBackgroundImage(UIImage(named: "closeButton"), forState: UIControlState.Normal)
 	}
     
 

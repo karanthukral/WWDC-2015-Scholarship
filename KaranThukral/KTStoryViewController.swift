@@ -23,6 +23,7 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		textScrollView.delegate = self
 		self.automaticallyAdjustsScrollViewInsets = false
 		allStories = KTDataStore.allStories()
+		bannerImageView.image = allStories[0].bannerImage
     }
 	
 	override func viewDidLayoutSubviews() {
@@ -44,6 +45,7 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		timelineButton.layer.shadowRadius = 0
 		timelineButton.layer.shadowOffset = CGSizeMake(0, 1.0)
 		timelineButton.backgroundColor = KTConstants.KTStoryView.timelineButtonBackgroundColor
+		timelineButton.setBackgroundImage(UIImage(named: "timelineButton"), forState: UIControlState.Normal)
 	}
 	
 	func setUpScrollView() {
@@ -79,7 +81,7 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	}
 	
 	func setUpLabelForIndex(index: Int) -> UILabel {
-		var frame = CGRectMake(KTConstants.KTStoryView.sideLabelPadding, KTConstants.KTStoryView.topLabelPadding, textScrollView.frame.size.width - (2 * KTConstants.KTStoryView.sideLabelPadding), 0)
+		var frame = CGRectMake(0, KTConstants.KTStoryView.topLabelPadding, textScrollView.frame.size.width, 0)
 		var label = UILabel.init(frame: frame)
 		let story = allStories[index]
 		var labelText = story.body
@@ -126,11 +128,13 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	func changeTitleAndImage(index: Int) {
 		timelineBar.setSelected(index)
 		var story = allStories[index]
-		UIView.animateWithDuration(0.25, delay: 0.0, options: nil, animations: {
+		
+		UIView.transitionWithView(self.bannerImageView, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
+			self.bannerImageView.image = story.bannerImage
 			self.pageTitleLabel.text = story.title
-			}, completion: { finished in
-				
-		})
+		}) { (completed) -> Void in
+	
+		}
 	}
 	
 	// MARK: Navigation

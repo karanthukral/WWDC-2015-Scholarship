@@ -84,7 +84,7 @@ class KTTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UINa
 			
 		case .Changed:
 			var translation = gestureRecognizer.translationInView(self.navigationController!.view)
-			var completionProgress = -translation.y/(CGRectGetHeight(self.navigationController!.view.bounds)/2)
+			var completionProgress = -translation.y/(CGRectGetHeight(self.navigationController!.view.bounds)*2)
 			self.interactionController?.updateInteractiveTransition(completionProgress)
 			
 		case .Ended:

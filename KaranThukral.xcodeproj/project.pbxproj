@@ -14,7 +14,6 @@
 		9E49662D1ADE0F4E0043D37D /* KTLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E49662C1ADE0F4E0043D37D /* KTLaunchViewController.swift */; };
 		9E4966301ADE0F4E0043D37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E49662E1ADE0F4E0043D37D /* Main.storyboard */; };
 		9E4966321ADE0F4E0043D37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4966311ADE0F4E0043D37D /* Images.xcassets */; };
-		9E4966351ADE0F4E0043D37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4966331ADE0F4E0043D37D /* LaunchScreen.xib */; };
 		9E4966411ADE0F4E0043D37D /* KaranThukralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4966401ADE0F4E0043D37D /* KaranThukralTests.swift */; };
 		9E766FA31AE45DFC00500018 /* KTTimelineBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E766FA21AE45DFC00500018 /* KTTimelineBarView.swift */; };
 		9EA605291AE301B700B2DF96 /* KTTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA605281AE301B700B2DF96 /* KTTimelineViewController.swift */; };
@@ -45,7 +44,6 @@
 		9E49662C1ADE0F4E0043D37D /* KTLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTLaunchViewController.swift; sourceTree = "<group>"; };
 		9E49662F1ADE0F4E0043D37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E4966311ADE0F4E0043D37D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9E4966341ADE0F4E0043D37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9E49663A1ADE0F4E0043D37D /* KaranThukralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaranThukralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E49663F1ADE0F4E0043D37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E4966401ADE0F4E0043D37D /* KaranThukralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaranThukralTests.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				9E49662E1ADE0F4E0043D37D /* Main.storyboard */,
-				9E4966331ADE0F4E0043D37D /* LaunchScreen.xib */,
 				9EA6052A1AE3024400B2DF96 /* KTTimelineCell.swift */,
 				9E766FA21AE45DFC00500018 /* KTTimelineBarView.swift */,
 			);
@@ -256,7 +253,6 @@
 			files = (
 				9E4966301ADE0F4E0043D37D /* Main.storyboard in Resources */,
 				9EA605301AE304A200B2DF96 /* MavenProLight-200.otf in Resources */,
-				9E4966351ADE0F4E0043D37D /* LaunchScreen.xib in Resources */,
 				9E4966321ADE0F4E0043D37D /* Images.xcassets in Resources */,
 				9EA605311AE304A200B2DF96 /* MavenProLight-300.otf in Resources */,
 				9EA6052F1AE304A200B2DF96 /* MavenPro-Regular.ttf in Resources */,
@@ -314,14 +310,6 @@
 				9E49662F1ADE0F4E0043D37D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9E4966331ADE0F4E0043D37D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9E4966341ADE0F4E0043D37D /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -412,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = KaranThukral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = KaranThukral/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
