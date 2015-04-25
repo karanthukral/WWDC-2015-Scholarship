@@ -14,8 +14,8 @@ class KTTimelineCell: UITableViewCell {
 
 	@IBOutlet weak var selectionImageView: UIImageView!
 	
-	func setUp(forStory story: KTStory, isSelected selected: Bool) {
-		self.titleLabel.text = story.title
+	func setUp(forTitle title: String, isSelected selected: Bool) {
+		self.titleLabel.text = title
 		if (selected) {
 			selectionImageView.image = UIImage(named: "selectedStory")
 		} else {

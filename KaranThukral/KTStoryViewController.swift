@@ -44,21 +44,22 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		timelineButton.layer.shadowOpacity = 1.0
 		timelineButton.layer.shadowRadius = 0
 		timelineButton.layer.shadowOffset = CGSizeMake(0, 1.0)
-		timelineButton.backgroundColor = KTConstants.KTStoryView.timelineButtonBackgroundColor
+		timelineButton.backgroundColor = KTConstants.primaryActionColor
 		timelineButton.setBackgroundImage(UIImage(named: "timelineButton"), forState: UIControlState.Normal)
 	}
 	
 	func setUpScrollView() {
 		didLayoutCustomSubviews = true
-		var numberOfPages = allStories.count
+		var numberOfPages = allStories.count + 1 // 1 extra for contact view
 		textScrollView.contentSize = CGSizeMake(CGRectGetWidth(textScrollView.frame), (CGRectGetHeight(textScrollView.frame) * CGFloat(numberOfPages)))
 		textScrollView.backgroundColor = UIColor.clearColor()
 		
-		for (var index = 0; index < numberOfPages; index++) {
+		for (var index = 0; index < allStories.count; index++) {
 			var innerView = setUpInnerScrollViewForIndex(index)
 			textScrollView.addSubview(innerView)
 			innerScrollViews.append(innerView)
 		}
+		setupContactView()
 	}
 	
 	func setUpInnerScrollViewForIndex(index: Int) -> UIScrollView {
@@ -77,6 +78,7 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		innerView.addSubview(label)
 		var contentSize = CGSizeMake(label.frame.size.width, label.frame.size.height + KTConstants.KTStoryView.innerScrollViewPadding)
 		innerView.contentSize = contentSize
+		innerView.showsVerticalScrollIndicator = false
 		return innerView
 	}
 	
@@ -102,6 +104,30 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		return label
 	}
 	
+	func setupContactView() {
+		var superView = UIView(frame: CGRectMake(0, CGRectGetHeight(textScrollView.frame) * CGFloat(allStories.count), CGRectGetWidth(textScrollView.frame), CGRectGetHeight(textScrollView.frame)))
+		textScrollView.addSubview(superView)
+		var viewHeight = KTConstants.KTStoryView.contactViewHeight
+		var contactView = UIView(frame:CGRectMake(0, (CGRectGetHeight(superView.frame) - viewHeight)/2, CGRectGetWidth(superView.frame), viewHeight))
+		var label = UILabel(frame: CGRectMake(0, 0, CGRectGetWidth(contactView.frame), KTConstants.KTStoryView.contactViewLabelHeight))
+		label.font = UIFont(name: "Maven Pro", size: 22.0)
+		label.textAlignment = NSTextAlignment.Center
+		label.numberOfLines = 0
+		label.text = "Designed & Developed By\nKaran Thukral"
+		contactView.addSubview(label)
+		
+		var websiteButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+		var buttonWidth = KTConstants.KTStoryView.websiteButtonWidth
+		websiteButton.frame = CGRectMake((CGRectGetWidth(superView.frame) - buttonWidth)/2, CGRectGetMaxY(label.frame) + 20, buttonWidth, KTConstants.KTStoryView.websiteButtonHeight)
+		websiteButton.layer.cornerRadius = 0.5 * KTConstants.KTStoryView.websiteButtonHeight
+		websiteButton.layer.masksToBounds = false
+		websiteButton.addTarget(self, action: Selector("websiteButtonTapped"), forControlEvents: UIControlEvents.TouchUpInside)
+		websiteButton.backgroundColor = KTConstants.primaryActionColor
+		websiteButton.setBackgroundImage(UIImage(named: "websiteButton"), forState: UIControlState.Normal)
+		contactView.addSubview(websiteButton)
+		superView.addSubview(contactView)
+	}
+	
 	func setupTimelineBar() {
 		var height = CGRectGetHeight(textScrollView.frame) - CGRectGetHeight(timelineButton.frame) + 10
 		timelineBar = KTTimelineBarView(frame: CGRectMake(CGRectGetMidX(timelineButton.frame) - (KTConstants.KTStoryView.timelineBarWidth/2), CGRectGetMaxY(bannerImageView.frame), KTConstants.KTStoryView.timelineBarWidth, height))
@@ -113,15 +139,22 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		}
 	}
 	
+	// MARK: Action Handlers
+	
 	func timelineTapped(gestureRecognizer: UITapGestureRecognizer) {
 		var allTimelineViews = timelineBar.allStoryViews
 		for var index = 0; index < allTimelineViews.count; index++ {
 			if (allTimelineViews[index] == gestureRecognizer.view) {
+				updateInnerScrollViewOffset(index)
 				textScrollView.scrollRectToVisible(CGRectMake(0, CGRectGetHeight(textScrollView.frame) * CGFloat(index), CGRectGetWidth(textScrollView.frame), CGRectGetHeight(textScrollView.frame)), animated: true)
-				self.changeTitleAndImage(index)
+				changeTitleAndImage(index)
 				break
 			}
 		}
+	}
+	
+	func websiteButtonTapped() {
+		UIApplication.sharedApplication().openURL(NSURL(string: "http://www.karanthukral.me")!)
 	}
 	
 	// MARK: Scroll View Delegate
@@ -142,13 +175,30 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 	
 	func changeTitleAndImage(index: Int) {
 		timelineBar.setSelected(index)
-		var story = allStories[index]
+		var image: UIImage?
+		var title: String?
+		if (index < allStories.count) {
+			var story = allStories[index]
+			image = story.bannerImage
+			title = story.title
+		} else {
+			// Contact Page
+			image = UIImage(named: "contactImage")
+			title = "Contact"
+		}
 		
 		UIView.transitionWithView(self.bannerImageView, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: { () -> Void in
-			self.bannerImageView.image = story.bannerImage
-			self.pageTitleLabel.text = story.title
-		}) { (completed) -> Void in
+			self.bannerImageView.image = image
+			self.pageTitleLabel.text = title
+			}) { (completed) -> Void in
+				
+		}
+	}
 	
+	func updateInnerScrollViewOffset(index: Int) {
+		if (index < allStories.count) {
+			var innerScrollView = innerScrollViews[index]
+			innerScrollView.contentOffset = CGPointZero
 		}
 	}
 	
@@ -168,8 +218,7 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		var pageLoc = pageLocation(index)
 		textScrollView.scrollRectToVisible(CGRectMake(0, pageLoc, CGRectGetWidth(textScrollView.frame), CGRectGetHeight(textScrollView.frame)), animated: false
 		)
-		var innerScrollView = innerScrollViews[index]
-		innerScrollView.contentOffset = CGPointZero
+		updateInnerScrollViewOffset(index)
 		changeTitleAndImage(currentPage())
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
