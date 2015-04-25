@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1dF-7U-g2I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1dF-7U-g2I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -381,8 +381,6 @@ University of Waterloo
                                                     <exclude reference="PHg-tQ-sro"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="6yl-yT-zFb"/>
-                                                    <exclude reference="uae-Mh-d9i"/>
                                                     <exclude reference="IwK-qN-RuU"/>
                                                     <exclude reference="OoP-Xk-UAu"/>
                                                     <exclude reference="Z53-dv-MRZ"/>
@@ -390,6 +388,8 @@ University of Waterloo
                                                     <exclude reference="enH-7s-eNa"/>
                                                     <exclude reference="o9n-iA-ZEa"/>
                                                     <exclude reference="rDY-Jd-Im4"/>
+                                                    <exclude reference="6yl-yT-zFb"/>
+                                                    <exclude reference="uae-Mh-d9i"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -397,8 +397,6 @@ University of Waterloo
                                                     <include reference="PHg-tQ-sro"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="6yl-yT-zFb"/>
-                                                    <include reference="uae-Mh-d9i"/>
                                                     <exclude reference="ABE-8J-HRn"/>
                                                     <exclude reference="AKs-Mb-mU9"/>
                                                     <include reference="IwK-qN-RuU"/>
@@ -409,6 +407,8 @@ University of Waterloo
                                                     <include reference="enH-7s-eNa"/>
                                                     <exclude reference="o9n-iA-ZEa"/>
                                                     <include reference="rDY-Jd-Im4"/>
+                                                    <include reference="6yl-yT-zFb"/>
+                                                    <include reference="uae-Mh-d9i"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

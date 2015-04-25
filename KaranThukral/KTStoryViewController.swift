@@ -107,6 +107,21 @@ class KTStoryViewController: UIViewController, UIScrollViewDelegate, KTTimelineD
 		timelineBar = KTTimelineBarView(frame: CGRectMake(CGRectGetMidX(timelineButton.frame) - (KTConstants.KTStoryView.timelineBarWidth/2), CGRectGetMaxY(bannerImageView.frame), KTConstants.KTStoryView.timelineBarWidth, height))
 		self.view.insertSubview(timelineBar, atIndex: 0)
 		timelineBar.setSelected(0)
+		for view in timelineBar.allStoryViews {
+			var tapGesture = UITapGestureRecognizer(target: self, action: Selector("timelineTapped:"))
+			view.addGestureRecognizer(tapGesture)
+		}
+	}
+	
+	func timelineTapped(gestureRecognizer: UITapGestureRecognizer) {
+		var allTimelineViews = timelineBar.allStoryViews
+		for var index = 0; index < allTimelineViews.count; index++ {
+			if (allTimelineViews[index] == gestureRecognizer.view) {
+				textScrollView.scrollRectToVisible(CGRectMake(0, CGRectGetHeight(textScrollView.frame) * CGFloat(index), CGRectGetWidth(textScrollView.frame), CGRectGetHeight(textScrollView.frame)), animated: true)
+				self.changeTitleAndImage(index)
+				break
+			}
+		}
 	}
 	
 	// MARK: Scroll View Delegate
