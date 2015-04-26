@@ -7,9 +7,9 @@
     <customFonts key="customFonts">
         <mutableArray key="MavenPro-Regular.ttf">
             <string>MavenProRegular</string>
+            <string>MavenProRegular</string>
         </mutableArray>
         <mutableArray key="MavenProLight-200.otf">
-            <string>MavenProLight200-Regular</string>
             <string>MavenProLight200-Regular</string>
             <string>MavenProLight200-Regular</string>
             <string>MavenProLight200-Regular</string>
@@ -35,27 +35,41 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-AY-fbD">
                                 <rect key="frame" x="200" y="84" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="C7A-D8-h2B"/>
                                     <constraint firstAttribute="width" constant="200" id="DJH-7y-DRc"/>
                                     <constraint firstAttribute="height" constant="200" id="G32-nT-Jc1"/>
+                                    <constraint firstAttribute="height" constant="200" id="LMp-bG-6FT"/>
                                     <constraint firstAttribute="height" constant="200" id="Xa1-kg-FIC"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="YBT-gV-R9Z"/>
+                                    <constraint firstAttribute="width" constant="200" id="dYW-qc-tRM"/>
+                                    <constraint firstAttribute="height" constant="200" id="faj-hk-z85"/>
                                     <constraint firstAttribute="width" constant="200" id="tdV-GR-0EV"/>
+                                    <constraint firstAttribute="width" constant="200" id="uyX-zB-DwS"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="DJH-7y-DRc"/>
                                         <exclude reference="G32-nT-Jc1"/>
+                                        <exclude reference="LMp-bG-6FT"/>
                                         <exclude reference="Xa1-kg-FIC"/>
+                                        <exclude reference="dYW-qc-tRM"/>
+                                        <exclude reference="faj-hk-z85"/>
                                         <exclude reference="tdV-GR-0EV"/>
+                                        <exclude reference="uyX-zB-DwS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="faj-hk-z85"/>
+                                        <include reference="uyX-zB-DwS"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="C7A-D8-h2B"/>
-                                        <include reference="DJH-7y-DRc"/>
-                                        <include reference="Xa1-kg-FIC"/>
-                                        <exclude reference="YBT-gV-R9Z"/>
+                                        <exclude reference="DJH-7y-DRc"/>
+                                        <include reference="LMp-bG-6FT"/>
+                                        <exclude reference="Xa1-kg-FIC"/>
+                                        <include reference="dYW-qc-tRM"/>
+                                        <exclude reference="faj-hk-z85"/>
+                                        <exclude reference="uyX-zB-DwS"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -64,6 +78,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="1Wn-XY-9pf"/>
                                     <constraint firstAttribute="height" constant="46" id="ASR-Nr-GkU"/>
+                                    <constraint firstAttribute="height" constant="46" id="amA-F4-4dV"/>
                                     <constraint firstAttribute="width" constant="299" id="hNg-5m-fzd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="32"/>
@@ -72,6 +87,14 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="1Wn-XY-9pf"/>
+                                        <exclude reference="amA-F4-4dV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="ASR-Nr-GkU"/>
+                                        <include reference="amA-F4-4dV"/>
+                                        <exclude reference="hNg-5m-fzd"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -82,10 +105,44 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-lQ-tKa">
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="69W-LR-zF1"/>
+                                    <constraint firstAttribute="height" constant="80" id="W50-L5-b9K"/>
+                                    <constraint firstAttribute="height" constant="80" id="nGa-jb-K8u"/>
+                                    <constraint firstAttribute="height" constant="80" id="xta-iK-iBu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="W50-L5-b9K"/>
+                                        <exclude reference="nGa-jb-K8u"/>
+                                        <exclude reference="xta-iK-iBu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="69W-LR-zF1"/>
+                                        <exclude reference="nGa-jb-K8u"/>
+                                        <include reference="xta-iK-iBu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="69W-LR-zF1"/>
+                                        <include reference="W50-L5-b9K"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-Vo-XGM">
                                 <rect key="frame" x="137" y="362" width="326" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="DE8-sn-jmj"/>
+                                    <constraint firstAttribute="height" constant="49" id="bSr-Sk-Kgc"/>
+                                    <constraint firstAttribute="height" constant="52" id="g8G-Os-M2o"/>
                                     <constraint firstAttribute="width" constant="326" id="yId-Xl-2oT"/>
                                 </constraints>
                                 <string key="text">Systems Design Engineering Student
@@ -96,74 +153,79 @@ University of Waterloo
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="DE8-sn-jmj"/>
+                                        <exclude reference="bSr-Sk-Kgc"/>
+                                        <exclude reference="g8G-Os-M2o"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="DE8-sn-jmj"/>
+                                        <include reference="bSr-Sk-Kgc"/>
                                         <exclude reference="yId-Xl-2oT"/>
                                     </mask>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-lQ-tKa">
-                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="69W-LR-zF1"/>
-                                    <constraint firstAttribute="height" constant="80" id="W50-L5-b9K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="W50-L5-b9K"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="69W-LR-zF1"/>
-                                        <include reference="W50-L5-b9K"/>
+                                        <exclude reference="bSr-Sk-Kgc"/>
+                                        <include reference="g8G-Os-M2o"/>
+                                        <exclude reference="yId-Xl-2oT"/>
                                     </mask>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="0OO-Gw-82K"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="35" id="3Wb-k1-4Tb"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="3tA-hA-XCC"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="35" id="4Eb-8Y-OcP"/>
-                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="35" id="Aen-wb-2Wy"/>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="100" id="538-Ex-RJa"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="osa-IH-eIf" secondAttribute="bottom" id="6cv-cl-kJj"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="8xm-bI-Acn"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="ABk-wF-ERP"/>
                             <constraint firstItem="zB0-AY-fbD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="128" id="AvI-4v-2HT"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="trailing" secondItem="osa-IH-eIf" secondAttribute="trailing" id="Ba0-kt-eoQ"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="F6g-cW-s5F"/>
                             <constraint firstItem="zB0-AY-fbD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="FxZ-OM-jGe"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="G3J-E5-vJb"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="zB0-AY-fbD" secondAttribute="centerX" id="IGl-46-Oef"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="IeC-ff-ztT"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="trailing" secondItem="osa-IH-eIf" secondAttribute="trailing" id="IgF-x9-FyT"/>
                             <constraint firstItem="osa-IH-eIf" firstAttribute="trailing" secondItem="peP-lQ-tKa" secondAttribute="trailing" id="J8D-He-OhJ"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="mkK-ad-2Vz" secondAttribute="bottom" constant="8" symbolic="YES" id="LAx-Tq-p6G"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="osa-IH-eIf" secondAttribute="centerX" id="PwH-zN-K5M"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="300" id="Rzw-JX-LdM"/>
-                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="1ae-Vo-XGM" secondAttribute="centerX" id="ZrY-qs-cuE"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="osa-IH-eIf" secondAttribute="bottom" id="QyA-0S-SA6"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="mkK-ad-2Vz" secondAttribute="bottom" constant="8" symbolic="YES" id="RMX-pW-Alb"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="35" id="Uzx-DR-2cG"/>
+                            <constraint firstAttribute="trailing" secondItem="mkK-ad-2Vz" secondAttribute="trailing" constant="50" id="Ybe-Fo-bTv"/>
                             <constraint firstItem="osa-IH-eIf" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="aee-B1-7L9"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="bSu-xD-sCH"/>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="bnb-Si-htE"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="dbJ-yD-VrH"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="hQ5-IY-Lj5"/>
                             <constraint firstItem="osa-IH-eIf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="iEt-Y6-JC7">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-43"/>
                             </constraint>
-                            <constraint firstItem="zB0-AY-fbD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="128" id="j55-Vv-9nL"/>
-                            <constraint firstItem="zB0-AY-fbD" firstAttribute="centerX" secondItem="mkK-ad-2Vz" secondAttribute="centerX" id="jF9-j5-NHS"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="centerX" secondItem="mkK-ad-2Vz" secondAttribute="centerX" id="jqT-af-try"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="width" secondItem="osa-IH-eIf" secondAttribute="width" id="kvg-Ge-buj"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="centerX" secondItem="peP-lQ-tKa" secondAttribute="centerX" id="lUj-hv-Ttq"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="peP-lQ-tKa" secondAttribute="centerX" id="mUh-Bm-aPC"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="nS1-WP-3BZ"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="35" id="nhp-WA-IFm"/>
                             <constraint firstItem="zB0-AY-fbD" firstAttribute="centerX" secondItem="osa-IH-eIf" secondAttribute="centerX" id="oSV-V7-hT6"/>
                             <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="78" id="p1Z-dc-b7w"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="1ae-Vo-XGM" secondAttribute="centerX" id="pBC-Ww-Nra"/>
-                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="centerX" secondItem="peP-lQ-tKa" secondAttribute="centerX" id="pas-E9-Uy8"/>
                             <constraint firstItem="mkK-ad-2Vz" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="35" id="pfD-qd-5xD"/>
                             <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="zB0-AY-fbD" secondAttribute="bottom" constant="78" id="pyq-FO-kfs"/>
-                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="mkK-ad-2Vz" secondAttribute="bottom" constant="-3" id="rcE-3c-KQ0"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="top" secondItem="mkK-ad-2Vz" secondAttribute="bottom" constant="-3" id="qab-Vr-JWQ"/>
+                            <constraint firstItem="zB0-AY-fbD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="84" id="sZz-oT-PKB"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="centerX" secondItem="zB0-AY-fbD" secondAttribute="centerX" id="smy-sA-jW6"/>
                             <constraint firstItem="zB0-AY-fbD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="uM3-U5-w2a"/>
+                            <constraint firstItem="mkK-ad-2Vz" firstAttribute="centerX" secondItem="peP-lQ-tKa" secondAttribute="centerX" id="vIJ-Yo-2kv"/>
+                            <constraint firstItem="peP-lQ-tKa" firstAttribute="leading" secondItem="osa-IH-eIf" secondAttribute="leading" id="vb2-4X-lwv"/>
                             <constraint firstItem="osa-IH-eIf" firstAttribute="leading" secondItem="peP-lQ-tKa" secondAttribute="leading" id="w3W-n1-XC3"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="bottom" secondItem="osa-IH-eIf" secondAttribute="bottom" id="w8a-IO-Oa3"/>
                             <constraint firstItem="peP-lQ-tKa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wUn-M5-FEi"/>
-                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="x0E-S6-aDP"/>
+                            <constraint firstItem="1ae-Vo-XGM" firstAttribute="centerX" secondItem="mkK-ad-2Vz" secondAttribute="centerX" id="x3k-qE-6KI"/>
                             <constraint firstAttribute="centerX" secondItem="zB0-AY-fbD" secondAttribute="centerX" id="yyN-BP-GCR"/>
                         </constraints>
                         <variation key="default">
@@ -172,21 +234,77 @@ University of Waterloo
                                 <exclude reference="aee-B1-7L9"/>
                                 <exclude reference="iEt-Y6-JC7"/>
                                 <exclude reference="w3W-n1-XC3"/>
+                                <exclude reference="0OO-Gw-82K"/>
+                                <exclude reference="538-Ex-RJa"/>
                                 <exclude reference="AvI-4v-2HT"/>
                                 <exclude reference="FxZ-OM-jGe"/>
-                                <exclude reference="j55-Vv-9nL"/>
-                                <exclude reference="jF9-j5-NHS"/>
+                                <exclude reference="bnb-Si-htE"/>
                                 <exclude reference="oSV-V7-hT6"/>
+                                <exclude reference="sZz-oT-PKB"/>
+                                <exclude reference="3Wb-k1-4Tb"/>
                                 <exclude reference="4Eb-8Y-OcP"/>
-                                <exclude reference="Aen-wb-2Wy"/>
-                                <exclude reference="ZrY-qs-cuE"/>
+                                <exclude reference="Uzx-DR-2cG"/>
+                                <exclude reference="Ybe-Fo-bTv"/>
+                                <exclude reference="nhp-WA-IFm"/>
+                                <exclude reference="vIJ-Yo-2kv"/>
+                                <exclude reference="3tA-hA-XCC"/>
+                                <exclude reference="LAx-Tq-p6G"/>
+                                <exclude reference="RMX-pW-Alb"/>
+                                <exclude reference="dbJ-yD-VrH"/>
+                                <exclude reference="jqT-af-try"/>
+                                <exclude reference="lUj-hv-Ttq"/>
                                 <exclude reference="p1Z-dc-b7w"/>
-                                <exclude reference="pas-E9-Uy8"/>
-                                <exclude reference="rcE-3c-KQ0"/>
-                                <exclude reference="x0E-S6-aDP"/>
+                                <exclude reference="qab-Vr-JWQ"/>
+                                <exclude reference="smy-sA-jW6"/>
+                                <exclude reference="x3k-qE-6KI"/>
+                                <exclude reference="6cv-cl-kJj"/>
+                                <exclude reference="8xm-bI-Acn"/>
+                                <exclude reference="ABk-wF-ERP"/>
+                                <exclude reference="Ba0-kt-eoQ"/>
                                 <exclude reference="F6g-cW-s5F"/>
                                 <exclude reference="G3J-E5-vJb"/>
                                 <exclude reference="IeC-ff-ztT"/>
+                                <exclude reference="IgF-x9-FyT"/>
+                                <exclude reference="QyA-0S-SA6"/>
+                                <exclude reference="hQ5-IY-Lj5"/>
+                                <exclude reference="nS1-WP-3BZ"/>
+                                <exclude reference="vb2-4X-lwv"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="538-Ex-RJa"/>
+                                <include reference="bnb-Si-htE"/>
+                                <exclude reference="uM3-U5-w2a"/>
+                                <exclude reference="yyN-BP-GCR"/>
+                                <include reference="3Wb-k1-4Tb"/>
+                                <exclude reference="IGl-46-Oef"/>
+                                <exclude reference="PwH-zN-K5M"/>
+                                <exclude reference="mUh-Bm-aPC"/>
+                                <include reference="nhp-WA-IFm"/>
+                                <exclude reference="pBC-Ww-Nra"/>
+                                <exclude reference="pfD-qd-5xD"/>
+                                <exclude reference="vIJ-Yo-2kv"/>
+                                <include reference="LAx-Tq-p6G"/>
+                                <include reference="dbJ-yD-VrH"/>
+                                <include reference="lUj-hv-Ttq"/>
+                                <exclude reference="pyq-FO-kfs"/>
+                                <exclude reference="qab-Vr-JWQ"/>
+                                <include reference="smy-sA-jW6"/>
+                                <include reference="x3k-qE-6KI"/>
+                                <include reference="6cv-cl-kJj"/>
+                                <exclude reference="8xm-bI-Acn"/>
+                                <exclude reference="ABk-wF-ERP"/>
+                                <include reference="Ba0-kt-eoQ"/>
+                                <exclude reference="IgF-x9-FyT"/>
+                                <exclude reference="QyA-0S-SA6"/>
+                                <exclude reference="bSu-xD-sCH"/>
+                                <include reference="hQ5-IY-Lj5"/>
+                                <exclude reference="kvg-Ge-buj"/>
+                                <include reference="nS1-WP-3BZ"/>
+                                <include reference="vb2-4X-lwv"/>
+                                <exclude reference="w8a-IO-Oa3"/>
+                                <exclude reference="wUn-M5-FEi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -195,24 +313,32 @@ University of Waterloo
                                 <include reference="aee-B1-7L9"/>
                                 <include reference="iEt-Y6-JC7"/>
                                 <include reference="w3W-n1-XC3"/>
+                                <include reference="0OO-Gw-82K"/>
+                                <exclude reference="538-Ex-RJa"/>
                                 <exclude reference="AvI-4v-2HT"/>
-                                <include reference="j55-Vv-9nL"/>
-                                <include reference="jF9-j5-NHS"/>
+                                <exclude reference="bnb-Si-htE"/>
+                                <include reference="sZz-oT-PKB"/>
                                 <exclude reference="uM3-U5-w2a"/>
                                 <exclude reference="yyN-BP-GCR"/>
                                 <include reference="4Eb-8Y-OcP"/>
-                                <include reference="Aen-wb-2Wy"/>
                                 <exclude reference="IGl-46-Oef"/>
                                 <exclude reference="PwH-zN-K5M"/>
-                                <include reference="ZrY-qs-cuE"/>
+                                <include reference="Uzx-DR-2cG"/>
+                                <include reference="Ybe-Fo-bTv"/>
                                 <exclude reference="mUh-Bm-aPC"/>
+                                <exclude reference="nhp-WA-IFm"/>
                                 <exclude reference="pBC-Ww-Nra"/>
                                 <exclude reference="pfD-qd-5xD"/>
+                                <include reference="3tA-hA-XCC"/>
+                                <exclude reference="LAx-Tq-p6G"/>
+                                <include reference="RMX-pW-Alb"/>
+                                <exclude reference="dbJ-yD-VrH"/>
+                                <include reference="jqT-af-try"/>
+                                <exclude reference="lUj-hv-Ttq"/>
                                 <exclude reference="p1Z-dc-b7w"/>
-                                <include reference="pas-E9-Uy8"/>
                                 <exclude reference="pyq-FO-kfs"/>
-                                <include reference="rcE-3c-KQ0"/>
-                                <include reference="x0E-S6-aDP"/>
+                                <exclude reference="smy-sA-jW6"/>
+                                <exclude reference="x3k-qE-6KI"/>
                                 <include reference="F6g-cW-s5F"/>
                                 <include reference="G3J-E5-vJb"/>
                                 <include reference="IeC-ff-ztT"/>
@@ -220,7 +346,6 @@ University of Waterloo
                                 <exclude reference="kvg-Ge-buj"/>
                                 <exclude reference="w8a-IO-Oa3"/>
                                 <exclude reference="wUn-M5-FEi"/>
-                                <exclude reference="Rzw-JX-LdM"/>
                             </mask>
                         </variation>
                     </view>
@@ -266,6 +391,23 @@ University of Waterloo
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y43-wD-sbo">
+                                <rect key="frame" x="16" y="540" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="PEX-kr-c1k">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="40" id="Z7k-yc-tsw">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitTimelineButtonPressed:" destination="dWv-IT-dYD" eventType="touchUpInside" id="OSt-u8-VXU"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZCW-SB-bqM">
                                 <rect key="frame" x="0.0" y="67" width="600" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -359,6 +501,7 @@ University of Waterloo
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="PHg-tQ-sro" secondAttribute="bottom" constant="17" id="6yl-yT-zFb"/>
                                                 <constraint firstAttribute="trailing" secondItem="iQD-rw-b2o" secondAttribute="trailing" constant="44" id="ABE-8J-HRn">
+                                                    <variation key="widthClass=compact" constant="8"/>
                                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                                 </constraint>
                                                 <constraint firstItem="iQD-rw-b2o" firstAttribute="top" secondItem="zdG-tc-Wr9" secondAttribute="topMargin" constant="3" id="AKs-Mb-mU9"/>
@@ -419,42 +562,27 @@ University of Waterloo
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y43-wD-sbo">
-                                <rect key="frame" x="16" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="PEX-kr-c1k">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="40" id="Z7k-yc-tsw">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="45"/>
-                                    </constraint>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="exitTimelineButtonPressed:" destination="dWv-IT-dYD" eventType="touchUpInside" id="OSt-u8-VXU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8sF-PA-keJ" secondAttribute="trailing" constant="16" id="06z-e4-TB2"/>
                             <constraint firstItem="8sF-PA-keJ" firstAttribute="top" secondItem="zeg-tM-jcO" secondAttribute="bottom" constant="3" id="2If-Mt-xD4"/>
-                            <constraint firstItem="y43-wD-sbo" firstAttribute="top" secondItem="ZCW-SB-bqM" secondAttribute="bottom" constant="13" id="7Sx-um-Z2f"/>
+                            <constraint firstItem="y43-wD-sbo" firstAttribute="top" secondItem="ZCW-SB-bqM" secondAttribute="bottom" constant="13" id="35h-6E-8IZ"/>
+                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="centerX" secondItem="8sF-PA-keJ" secondAttribute="centerX" id="BB5-M9-sVZ"/>
                             <constraint firstItem="y43-wD-sbo" firstAttribute="top" secondItem="ZCW-SB-bqM" secondAttribute="bottom" constant="6" id="HTf-ud-ay5">
+                                <variation key="widthClass=compact" constant="7"/>
                                 <variation key="heightClass=regular-widthClass=compact" constant="13"/>
                             </constraint>
+                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="centerX" secondItem="8sF-PA-keJ" secondAttribute="centerX" id="IMb-Db-TNV"/>
                             <constraint firstItem="y43-wD-sbo" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leadingMargin" id="Jtd-st-bFI">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="8sF-PA-keJ" firstAttribute="top" secondItem="zeg-tM-jcO" secondAttribute="bottom" constant="23" id="NH6-80-oWh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZCW-SB-bqM" secondAttribute="trailing" constant="-16" id="OBT-yV-5qg"/>
-                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="top" secondItem="8sF-PA-keJ" secondAttribute="bottom" constant="6" id="RYn-5R-Q5n"/>
-                            <constraint firstAttribute="trailing" secondItem="ZCW-SB-bqM" secondAttribute="trailing" id="UT4-QR-2Bu"/>
                             <constraint firstItem="ZCW-SB-bqM" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leadingMargin" constant="-16" id="bVW-uN-Dy3"/>
-                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leadingMargin" constant="-17" id="dWG-aw-KrD"/>
+                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leading" id="ebi-cb-xeI"/>
                             <constraint firstItem="ZCW-SB-bqM" firstAttribute="top" secondItem="zeg-tM-jcO" secondAttribute="bottom" constant="47" id="iuj-fC-3sC">
+                                <variation key="widthClass=compact" constant="66"/>
                                 <variation key="heightClass=regular-widthClass=compact" constant="45"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="ZCW-SB-bqM" secondAttribute="trailing" constant="-16" id="m5u-bZ-f34"/>
@@ -462,9 +590,12 @@ University of Waterloo
                             <constraint firstAttribute="centerX" secondItem="8sF-PA-keJ" secondAttribute="centerX" id="pgc-mk-rL4"/>
                             <constraint firstItem="fpo-fe-epg" firstAttribute="top" secondItem="y43-wD-sbo" secondAttribute="bottom" constant="20" id="rOA-Lr-jQD"/>
                             <constraint firstItem="8sF-PA-keJ" firstAttribute="trailing" secondItem="bGl-SY-fBp" secondAttribute="trailingMargin" id="rRu-jm-wzT"/>
+                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leading" id="uOd-00-IeA"/>
                             <constraint firstItem="ZCW-SB-bqM" firstAttribute="top" secondItem="8sF-PA-keJ" secondAttribute="bottom" constant="8" id="uuz-bA-XPu">
+                                <variation key="widthClass=compact" constant="27"/>
                                 <variation key="heightClass=regular-widthClass=compact" constant="6"/>
                             </constraint>
+                            <constraint firstItem="ZCW-SB-bqM" firstAttribute="top" secondItem="8sF-PA-keJ" secondAttribute="bottom" constant="6" id="y3a-R5-Thy"/>
                             <constraint firstItem="8sF-PA-keJ" firstAttribute="leading" secondItem="bGl-SY-fBp" secondAttribute="leading" constant="16" id="yDk-Jd-3nt"/>
                             <constraint firstItem="8sF-PA-keJ" firstAttribute="top" secondItem="zeg-tM-jcO" secondAttribute="bottom" constant="3" id="zgt-of-6up"/>
                         </constraints>
@@ -473,13 +604,21 @@ University of Waterloo
                                 <exclude reference="NH6-80-oWh"/>
                                 <exclude reference="pE5-aL-duf"/>
                                 <exclude reference="rRu-jm-wzT"/>
+                                <exclude reference="BB5-M9-sVZ"/>
+                                <exclude reference="IMb-Db-TNV"/>
                                 <exclude reference="OBT-yV-5qg"/>
-                                <exclude reference="RYn-5R-Q5n"/>
-                                <exclude reference="UT4-QR-2Bu"/>
                                 <exclude reference="bVW-uN-Dy3"/>
-                                <exclude reference="dWG-aw-KrD"/>
+                                <exclude reference="ebi-cb-xeI"/>
                                 <exclude reference="m5u-bZ-f34"/>
-                                <exclude reference="7Sx-um-Z2f"/>
+                                <exclude reference="uOd-00-IeA"/>
+                                <exclude reference="y3a-R5-Thy"/>
+                                <exclude reference="35h-6E-8IZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="BB5-M9-sVZ"/>
+                                <include reference="uOd-00-IeA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -492,13 +631,15 @@ University of Waterloo
                                 <include reference="rRu-jm-wzT"/>
                                 <exclude reference="yDk-Jd-3nt"/>
                                 <exclude reference="zgt-of-6up"/>
+                                <exclude reference="BB5-M9-sVZ"/>
+                                <include reference="IMb-Db-TNV"/>
                                 <exclude reference="OBT-yV-5qg"/>
-                                <include reference="RYn-5R-Q5n"/>
-                                <include reference="UT4-QR-2Bu"/>
-                                <include reference="dWG-aw-KrD"/>
+                                <include reference="ebi-cb-xeI"/>
                                 <exclude reference="iuj-fC-3sC"/>
+                                <exclude reference="uOd-00-IeA"/>
                                 <exclude reference="uuz-bA-XPu"/>
-                                <include reference="7Sx-um-Z2f"/>
+                                <include reference="y3a-R5-Thy"/>
+                                <include reference="35h-6E-8IZ"/>
                                 <exclude reference="HTf-ud-ay5"/>
                             </mask>
                         </variation>
@@ -510,7 +651,7 @@ University of Waterloo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oq4-x8-XIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="520.5"/>
+            <point key="canvasLocation" x="1863" y="520"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="Ygc-sm-f0Y">
@@ -532,12 +673,17 @@ University of Waterloo
                                     </constraint>
                                     <constraint firstAttribute="height" constant="200" id="gwZ-1E-dTT"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="8Jj-97-f0a"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAZ-sf-yuu">
                                 <rect key="frame" x="0.0" y="143" width="600" height="57"/>
-                                <color key="backgroundColor" white="1" alpha="0.70999999999999996" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="277" placeholderIntrinsicHeight="372" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qju-uL-vpQ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="277" placeholderIntrinsicHeight="372" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qju-uL-vpQ">
                                 <rect key="frame" x="70" y="208" width="277" height="372"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="372" id="oIC-pw-Xp6"/>
@@ -583,7 +729,7 @@ University of Waterloo
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life in India" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-b2-hfl">
                                 <rect key="frame" x="84" y="14" width="432" height="25"/>
-                                <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="MavenProRegular" family="Maven Pro" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -594,6 +740,7 @@ University of Waterloo
                             <constraint firstItem="qju-uL-vpQ" firstAttribute="top" secondItem="3I3-b2-hfl" secondAttribute="bottom" constant="8" symbolic="YES" id="2c5-TX-0ff">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
                             </constraint>
+                            <constraint firstAttribute="trailing" secondItem="yxE-Jj-V5b" secondAttribute="trailing" id="5Eh-HM-65y"/>
                             <constraint firstItem="qju-uL-vpQ" firstAttribute="top" secondItem="BAZ-sf-yuu" secondAttribute="bottom" constant="8" symbolic="YES" id="74a-od-Bxd">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
                             </constraint>
@@ -648,6 +795,7 @@ University of Waterloo
                             <mask key="constraints">
                                 <exclude reference="1vD-mm-c5o"/>
                                 <exclude reference="wtx-OJ-5bc"/>
+                                <exclude reference="5Eh-HM-65y"/>
                                 <exclude reference="fqf-A9-TZD"/>
                                 <exclude reference="Izz-Ib-Y7d"/>
                                 <exclude reference="MWC-Xx-M9f"/>
@@ -667,6 +815,7 @@ University of Waterloo
                             <mask key="constraints">
                                 <include reference="1vD-mm-c5o"/>
                                 <include reference="wtx-OJ-5bc"/>
+                                <include reference="5Eh-HM-65y"/>
                                 <exclude reference="9ww-bQ-E0x"/>
                                 <exclude reference="BJN-p9-U0a"/>
                                 <include reference="fqf-A9-TZD"/>

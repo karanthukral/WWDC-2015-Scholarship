@@ -16,6 +16,7 @@ class KTTimelineBarView: UIView {
 	var kikAndCbcStory: UIView?
 	var shopifyStory: UIView?
 	var mcHacksAndCFKStory: UIView?
+	var contact: UIView?
 	var allStoryViews: Array <UIView> = []
 	
 	override init(frame: CGRect) {
@@ -44,6 +45,10 @@ class KTTimelineBarView: UIView {
 		mcHacksAndCFKStory = UIView(frame: CGRectZero)
 		self.addSubview(mcHacksAndCFKStory!)
 		allStoryViews.append(mcHacksAndCFKStory!)
+		
+		contact = UIView(frame: CGRectZero)
+		self.addSubview(contact!)
+		allStoryViews.append(contact!)
 	}
 
 	required init(coder aDecoder: NSCoder) {

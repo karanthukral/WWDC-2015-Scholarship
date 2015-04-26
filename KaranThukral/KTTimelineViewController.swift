@@ -44,7 +44,7 @@ class KTTimelineViewController: UIViewController, UITableViewDataSource, UITable
 		exitTimelineButton.layer.shadowOpacity = 1.0
 		exitTimelineButton.layer.shadowRadius = 0
 		exitTimelineButton.layer.shadowOffset = CGSizeMake(0, 1.0)
-		exitTimelineButton.backgroundColor = KTConstants.KTTimelineView.cancelTimelineButtonBackgroundColor
+		exitTimelineButton.backgroundColor = KTConstants.destroyActionColor
 		exitTimelineButton.setBackgroundImage(UIImage(named: "closeButton"), forState: UIControlState.Normal)
 	}
     
@@ -66,7 +66,7 @@ class KTTimelineViewController: UIViewController, UITableViewDataSource, UITable
 	// MARK: UITableViewDataSource
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return allStories.count
+		return allStories.count + 1
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,7 +75,13 @@ class KTTimelineViewController: UIViewController, UITableViewDataSource, UITable
 			isSelected = true
 		}
 		let cell = tableView.dequeueReusableCellWithIdentifier("timelineCell") as! KTTimelineCell
-		cell.setUp(forStory: allStories[indexPath.row], isSelected: isSelected)
+		var title: String?
+		if (indexPath.row < allStories.count) {
+			title = allStories[indexPath.row].title
+		} else {
+			title = "Contact"
+		}
+		cell.setUp(forTitle: title!, isSelected: isSelected)
 		return cell
 	}
 	
